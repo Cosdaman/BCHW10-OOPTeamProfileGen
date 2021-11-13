@@ -1,10 +1,11 @@
 //required libraries
 var inquirer = require('inquirer');
 const fs = require('fs');
-import * as questionBank from './src/questionBank';
+const questionBank = require("./src/questionBank")
 
 
 function init() {
+    console.log(questionBank)
     // inquirer.prompt(managerQuestions)
     //     .then(
     //         (response) => {

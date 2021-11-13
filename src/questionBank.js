@@ -1,5 +1,5 @@
 //inquirer question arrays
-export const managerQuestions = [
+const managerQuestions = [
     {
         type: "input",
         message: "What is the team manager's name?",
@@ -21,3 +21,5 @@ export const managerQuestions = [
         name: "mOffice"
     },
 ]
+
+module.exports = { managerQuestions }
