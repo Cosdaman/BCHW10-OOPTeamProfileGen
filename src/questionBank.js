@@ -25,9 +25,9 @@ const managerQuestions = [
 const menu = [
     {
         type: "list",
-        message: "Please select an option: ",
+        message: "Select an option to add a member or finish building the team: ",
         name: 'teamAddMenu',
-        choices: ["Add engineer", "Add intern", "Finish building team"]
+        choices: ["Add Engineer", "Add Intern", "Finish Building Team"]
     }
 ]
 
