@@ -5,7 +5,10 @@ const questionBank = require("./src/questionBank")
 
 
 function init() {
-    console.log(questionBank)
+    console.log(questionBank.managerQuestions)
+    console.log(questionBank.menu)
+    console.log(questionBank.internQuestions)
+    console.log(questionBank.engineerQuestions)
     // inquirer.prompt(managerQuestions)
     //     .then(
     //         (response) => {
