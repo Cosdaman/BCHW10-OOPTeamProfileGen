@@ -6,10 +6,6 @@ describe("Employee", () => {
             const employee = new Employee("name", "id", "email")
             expect(employee.name).toEqual("name")
         });
-        it("should return name", () => {
-            const employee = new Employee("name", "id", "email")
-            expect(employee.getName()).toEqual("name")
-        });
         it("should have 3 keys inside the object", () => {
             const employee = new Employee("name", "id", "email")
             expect(Object.keys(employee).length).toEqual(3)
@@ -17,6 +13,10 @@ describe("Employee", () => {
     });
 
     describe("testing functions", () => {
+        it("should return name", () => {
+            const employee = new Employee("name", "id", "email")
+            expect(employee.getName()).toEqual("name")
+        });
         it("should return employee", () => {
             const employee = new Employee("name", "id", "email")
             expect(employee.getRole()).toEqual("Employee")
