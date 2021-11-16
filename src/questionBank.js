@@ -41,21 +41,21 @@ const engineerQuestions = [
         message: "What is the engineer's name?",
         name: "name"
     },
-    // {
-    //     type: "input",
-    //     message: "What is the engineer's ID number?",
-    //     name: "id"
-    // },
-    // {
-    //     type: "input",
-    //     message: "What is the engineer's email address?",
-    //     name: "email"
-    // },
-    // {
-    //     type: "input",
-    //     message: "What is the engineer's github username?",
-    //     name: "github"
-    // },
+    {
+        type: "input",
+        message: "What is the engineer's ID number?",
+        name: "id"
+    },
+    {
+        type: "input",
+        message: "What is the engineer's email address?",
+        name: "email"
+    },
+    {
+        type: "input",
+        message: "What is the engineer's github username?",
+        name: "github"
+    },
 ]
 
 //question for intern
@@ -65,21 +65,21 @@ const internQuestions = [
         message: "What is the intern's name?",
         name: "name"
     },
-    // {
-    //     type: "input",
-    //     message: "What is the intern's ID number?",
-    //     name: "id"
-    // },
-    // {
-    //     type: "input",
-    //     message: "What is the intern's email address?",
-    //     name: "email"
-    // },
-    // {
-    //     type: "input",
-    //     message: "What is the intern's school?",
-    //     name: "school"
-    // },
+    {
+        type: "input",
+        message: "What is the intern's ID number?",
+        name: "id"
+    },
+    {
+        type: "input",
+        message: "What is the intern's email address?",
+        name: "email"
+    },
+    {
+        type: "input",
+        message: "What is the intern's school?",
+        name: "school"
+    },
 ]
 
 module.exports = { managerQuestions, menu, engineerQuestions, internQuestions }

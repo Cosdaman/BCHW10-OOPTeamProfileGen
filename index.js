@@ -2,7 +2,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const questionBank = require("./src/questionBank")
-const libs = require("./lib/index")
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
 
 
 //placeholder vars
@@ -13,7 +15,7 @@ function managerInq() {
         .then(
             (response) => {
                 console.log(response);
-                let newManager = new libs.Manager(response.name, response.id, response.email, response.office)
+                let newManager = new Manager(response.name, response.id, response.email, response.office)
                 staff.push(newManager)
                 menuInq();
             })
@@ -54,7 +56,7 @@ function engineerInq() {
     inquirer.prompt(questionBank.engineerQuestions)
         .then(
             (response) => {
-                let newEngi = new libs.Engineer(response.name, response.id, response.email, response.github)
+                let newEngi = new Engineer(response.name, response.id, response.email, response.github)
                 staff.push(newEngi);
                 menuInq();
             }
@@ -73,7 +75,7 @@ function internInq() {
     inquirer.prompt(questionBank.internQuestions)
         .then(
             (response) => {
-                let newInt = new libs.Intern(response.name, response.id, response.email, response.school);
+                let newInt = new Intern(response.name, response.id, response.email, response.school);
                 staff.push(newInt)
                 menuInq();
             }
@@ -91,6 +93,16 @@ function internInq() {
 
 function createFile() {
     console.log("file creation")
+    console.log(staff)
+    staff.forEach(element => {
+        if (element instanceof Manager) {
+            console.log("manager")
+        } else if (element instanceof Engineer) {
+            console.log("engineer")
+        } else if (element instanceof Intern){
+            console.log("intern")
+        }
+    });
 }
 
 managerInq();
