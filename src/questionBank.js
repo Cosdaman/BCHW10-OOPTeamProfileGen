@@ -1,27 +1,30 @@
 //inquirer question arrays
+
+//questions for managers
 const managerQuestions = [
     {
         type: "input",
         message: "What is the team manager's name?",
-        name: "mName"
+        name: "name"
     },
-    // {
-    //     type: "input",
-    //     message: "What is the manager's ID number?",
-    //     name: "mIdNum"
-    // },
-    // {
-    //     type: "input",
-    //     message: "What is the manager's email address?",
-    //     name: "mEmail"
-    // },
-    // {
-    //     type: "input",
-    //     message: "What is the manager's office number?",
-    //     name: "mOffice"
-    // },
+    {
+        type: "input",
+        message: "What is the manager's ID number?",
+        name: "id"
+    },
+    {
+        type: "input",
+        message: "What is the manager's email address?",
+        name: "email"
+    },
+    {
+        type: "input",
+        message: "What is the manager's office number?",
+        name: "office"
+    },
 ]
 
+//main menu
 const menu = [
     {
         type: "list",
@@ -31,49 +34,51 @@ const menu = [
     }
 ]
 
+//questions for engineer
 const engineerQuestions = [
     {
         type: "input",
         message: "What is the engineer's name?",
-        name: "eName"
+        name: "name"
     },
     // {
     //     type: "input",
     //     message: "What is the engineer's ID number?",
-    //     name: "eIdNum"
+    //     name: "id"
     // },
     // {
     //     type: "input",
     //     message: "What is the engineer's email address?",
-    //     name: "eEmail"
+    //     name: "email"
     // },
     // {
     //     type: "input",
     //     message: "What is the engineer's github username?",
-    //     name: "eGithub"
+    //     name: "github"
     // },
 ]
 
+//question for intern
 const internQuestions = [
     {
         type: "input",
         message: "What is the intern's name?",
-        name: "iName"
+        name: "name"
     },
     // {
     //     type: "input",
     //     message: "What is the intern's ID number?",
-    //     name: "iIdNum"
+    //     name: "id"
     // },
     // {
     //     type: "input",
     //     message: "What is the intern's email address?",
-    //     name: "iEmail"
+    //     name: "email"
     // },
     // {
     //     type: "input",
     //     message: "What is the intern's school?",
-    //     name: "iSchool"
+    //     name: "school"
     // },
 ]
 
