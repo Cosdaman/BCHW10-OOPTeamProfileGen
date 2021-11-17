@@ -18,17 +18,25 @@ let htmlfileOpen = `<!DOCTYPE html>
 </head>
 
 <body>
+<div class="container d-flex flex-column align-items-center">
 `
 
-let engineerHtmlOpen = `<div>`
+let engineerHtmlOpen = `<div class="row">
+<div id="engineer" class="col">`
+
 let engineerContent = "";
+
 let engineerHtmlClose = `</div>`
 
-let internHtmlOpen = `<div>`
+let internHtmlOpen = `<div id="intern" class="col">`
+
 let internContent = "";
-let internHtmlClose = `</div>`
+
+let internHtmlClose = `</div>
+</div>`
 
 let htmlfileClose = `
+</div>
 </body>
 </html>`
 
@@ -39,15 +47,17 @@ function generateHtml(staffArr) {
     staffArr.forEach(element => {
         if (element instanceof Manager) {
             htmlfileOpen += `
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <h5 class="card-title">${element.name}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">${element.getRole()}</h6>
-        <p class="card-text">ID: ${element.id}.</p>
-        <p class="card-text">Office: ${element.officeNum}</p>
-        <p class="card-text">Email: <a href="mailto:${element.email}" target="_blank">${element.email}</a></p>
+            <div id="manager" class="row">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">${element.name}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">${element.getRole()}</h6>
+                    <p class="card-text">ID: ${element.id}</p>
+                    <p class="card-text">Office: ${element.officeNum}</p>
+                    <p class="card-text">Email: <a href="mailto:${element.email}" target="_blank">${element.email}</a></p>
+            </div>
+        </div>
     </div>
-</div>
 `
         } else if (element instanceof Engineer) {
             engineerContent += `
@@ -55,7 +65,7 @@ function generateHtml(staffArr) {
 <div class="card-body">
     <h5 class="card-title">${element.name}</h5>
     <h6 class="card-subtitle mb-2 text-muted">${element.getRole()}</h6>
-    <p class="card-text">ID: ${element.id}.</p>
+    <p class="card-text">ID: ${element.id}</p>
     <p class="card-text">Github: <a href="https://github.com/${element.github}" target="_blank">${element.github}</a></p>
     <p class="card-text">Email: <a href="mailto:${element.email}" class="card-link">${element.email}</a></p>
 </div>
@@ -67,7 +77,7 @@ function generateHtml(staffArr) {
             <div class="card-body">
                 <h5 class="card-title">${element.name}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">${element.getRole()}</h6>
-                <p class="card-text">ID: ${element.id}.</p>
+                <p class="card-text">ID: ${element.id}</p>
                 <p class="card-text">School: ${element.school}</p>
                 <p class="card-text">Email: <a href="mailto:${element.email}" class="card-link">${element.email}</a></p>
             </div>

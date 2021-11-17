@@ -9,7 +9,7 @@ const managerQuestions = [
     },
     {
         type: "input",
-        message: "What is the manager's ID number?",
+        message: "What is the manager's ID?",
         name: "id"
     },
     {
@@ -43,7 +43,7 @@ const engineerQuestions = [
     },
     {
         type: "input",
-        message: "What is the engineer's ID number?",
+        message: "What is the engineer's ID?",
         name: "id"
     },
     {
@@ -67,7 +67,7 @@ const internQuestions = [
     },
     {
         type: "input",
-        message: "What is the intern's ID number?",
+        message: "What is the intern's ID?",
         name: "id"
     },
     {
