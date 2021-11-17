@@ -4,28 +4,30 @@ const Intern = require("../lib/intern");
 const Manager = require("../lib/manager");
 const fs = require('fs');
 
-
-
-function generateHtml(staffArr) {
-    let engineerHtml = "";
-    let internHtml = "";
-    let htmlfileOpen = `<!DOCTYPE html>
+let engineerHtml = "";
+let internHtml = "";
+let htmlfileOpen = `<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Profile Generator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Profile Generator</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
-<body>`
+<body>
+`
 
-    let htmlfileClose = `
+let htmlfileClose = `
 </body>
 </html>`
+
+
+
+function generateHtml(staffArr) {
 
     staffArr.forEach(element => {
         if (element instanceof Manager) {
@@ -35,7 +37,7 @@ function generateHtml(staffArr) {
         <h6 class="card-subtitle mb-2 text-muted">${element.getRole()}</h6>
         <p class="card-text">ID: ${element.id}.</p>
         <p class="card-text">Office: ${element.officeNum}</p>
-        <a href="mailto:${element.email}" class="card-link">${element.email}</a>
+        <p class="card-text">Email: <a href="mailto:${element.email}" target="_blank">${element.email}</a></p>
     </div>
 </div>`
         } else if (element instanceof Engineer) {
@@ -44,8 +46,8 @@ function generateHtml(staffArr) {
     <h5 class="card-title">${element.name}</h5>
     <h6 class="card-subtitle mb-2 text-muted">${element.getRole()}</h6>
     <p class="card-text">ID: ${element.id}.</p>
-    <p class="card-text">Github: <a href="https://github.com/${element.github}" class="card-link">${element.github}</a></p>
-    <a href="mailto:${element.email}" class="card-link">${element.email}</a>
+    <p class="card-text">Github: <a href="https://github.com/${element.github}" target="_blank">${element.github}</a></p>
+    <p class="card-text">Email: <a href="mailto:${element.email}" class="card-link">${element.email}</a></p>
 </div>
 </div>`
         } else if (element instanceof Intern) {
