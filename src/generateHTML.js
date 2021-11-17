@@ -22,13 +22,16 @@ let htmlfileOpen = `<!DOCTYPE html>
 `
 
 let engineerHtmlOpen = `<div class="row">
-<div id="engineer" class="col">`
+<div id="engineer" class="col-6 d-flex flex-wrap justify-content-around">
+<h1 class="col-12" style="text-align: center;">Engineers</h1>`
+
 
 let engineerContent = "";
 
 let engineerHtmlClose = `</div>`
 
-let internHtmlOpen = `<div id="intern" class="col">`
+let internHtmlOpen = `<div id="intern" class="col-6 d-flex flex-wrap justify-content-around">
+<h1 class="col-12" style="text-align: center;">Interns</h1>`
 
 let internContent = "";
 
@@ -47,7 +50,8 @@ function generateHtml(staffArr) {
     staffArr.forEach(element => {
         if (element instanceof Manager) {
             htmlfileOpen += `
-            <div id="manager" class="row">
+            <div id="manager" class="row justify-content-center">
+            <h1 class="col-12" style="text-align: center;">Manager</h1>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">${element.name}</h5>
@@ -61,7 +65,7 @@ function generateHtml(staffArr) {
 `
         } else if (element instanceof Engineer) {
             engineerContent += `
-<div class="card" style="width: 18rem;">
+<div class="card col-3" style="width: 18rem;">
 <div class="card-body">
     <h5 class="card-title">${element.name}</h5>
     <h6 class="card-subtitle mb-2 text-muted">${element.getRole()}</h6>
@@ -73,7 +77,7 @@ function generateHtml(staffArr) {
 `
         } else if (element instanceof Intern) {
             internContent += `
-<div class="card" style="width: 18rem;">
+<div class="card col-3" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">${element.name}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">${element.getRole()}</h6>
