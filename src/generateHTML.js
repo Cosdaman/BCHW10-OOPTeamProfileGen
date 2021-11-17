@@ -4,8 +4,7 @@ const Intern = require("../lib/intern");
 const Manager = require("../lib/manager");
 const fs = require('fs');
 
-let engineerHtml = "";
-let internHtml = "";
+//html placeholders
 let htmlfileOpen = `<!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +20,14 @@ let htmlfileOpen = `<!DOCTYPE html>
 <body>
 `
 
+let engineerHtmlOpen = `<div>`
+let engineerContent = "";
+let engineerHtmlClose = `</div>`
+
+let internHtmlOpen = `<div>`
+let internContent = "";
+let internHtmlClose = `</div>`
+
 let htmlfileClose = `
 </body>
 </html>`
@@ -31,7 +38,8 @@ function generateHtml(staffArr) {
 
     staffArr.forEach(element => {
         if (element instanceof Manager) {
-            htmlfileOpen += `<div class="card" style="width: 18rem;">
+            htmlfileOpen += `
+<div class="card" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title">${element.name}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${element.getRole()}</h6>
@@ -39,9 +47,11 @@ function generateHtml(staffArr) {
         <p class="card-text">Office: ${element.officeNum}</p>
         <p class="card-text">Email: <a href="mailto:${element.email}" target="_blank">${element.email}</a></p>
     </div>
-</div>`
+</div>
+`
         } else if (element instanceof Engineer) {
-            engineerHtml += `<div class="card" style="width: 18rem;">
+            engineerContent += `
+<div class="card" style="width: 18rem;">
 <div class="card-body">
     <h5 class="card-title">${element.name}</h5>
     <h6 class="card-subtitle mb-2 text-muted">${element.getRole()}</h6>
@@ -49,15 +59,29 @@ function generateHtml(staffArr) {
     <p class="card-text">Github: <a href="https://github.com/${element.github}" target="_blank">${element.github}</a></p>
     <p class="card-text">Email: <a href="mailto:${element.email}" class="card-link">${element.email}</a></p>
 </div>
-</div>`
+</div>
+`
         } else if (element instanceof Intern) {
-            console.log("intern")
+            internContent += `
+<div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">${element.name}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">${element.getRole()}</h6>
+                <p class="card-text">ID: ${element.id}.</p>
+                <p class="card-text">School: ${element.school}</p>
+                <p class="card-text">Email: <a href="mailto:${element.email}" class="card-link">${element.email}</a></p>
+            </div>
+            </div>
+            `
         }
     });
 
+    let engineerHtml = engineerHtmlOpen + engineerContent + engineerHtmlClose;
+    let internHtml = internHtmlOpen + internContent + internHtmlClose;
+
     fs.writeFile(
         `./dist/TeamProfile.html`,
-        `${htmlfileOpen}\n${engineerHtml}\n${htmlfileClose}`,
+        `${htmlfileOpen}\n${engineerHtml}\n${internHtml}\n${htmlfileClose}`,
         (err) => err ? console.error(err) : console.log("html generated")
     );
 }
