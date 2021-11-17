@@ -18,12 +18,18 @@ let htmlfileOpen = `<!DOCTYPE html>
 </head>
 
 <body>
+<nav class="navbar navbar-dark bg-dark d-flex">
+    <div class="container-fluid justify-content-center">
+        <span class="navbar-brand mb-0 h1">Team Profile</span>
+    </div>
+</nav>
+
 <div class="container d-flex flex-column align-items-center">
 `
 
 let engineerHtmlOpen = `<div class="row">
 <div id="engineer" class="col-6 d-flex flex-wrap justify-content-around">
-<h1 class="col-12" style="text-align: center;">Engineers</h1>`
+<h2 class="col-12" style="text-align: center;">Engineers</h2>`
 
 
 let engineerContent = "";
@@ -31,7 +37,7 @@ let engineerContent = "";
 let engineerHtmlClose = `</div>`
 
 let internHtmlOpen = `<div id="intern" class="col-6 d-flex flex-wrap justify-content-around">
-<h1 class="col-12" style="text-align: center;">Interns</h1>`
+<h2 class="col-12" style="text-align: center;">Interns</h2>`
 
 let internContent = "";
 
