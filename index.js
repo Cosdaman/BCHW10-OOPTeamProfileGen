@@ -1,11 +1,10 @@
 //required libraries
 const inquirer = require('inquirer');
-const fs = require('fs');
 const questionBank = require("./src/questionBank")
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
-
+const htmlGen = require('./src/generateHTML')
 
 //placeholder vars
 let staff = [];
@@ -93,16 +92,7 @@ function internInq() {
 
 function createFile() {
     console.log("file creation")
-    console.log(staff)
-    staff.forEach(element => {
-        if (element instanceof Manager) {
-            console.log("manager")
-        } else if (element instanceof Engineer) {
-            console.log("engineer")
-        } else if (element instanceof Intern){
-            console.log("intern")
-        }
-    });
+    htmlGen(staff)
 }
 
 managerInq();
