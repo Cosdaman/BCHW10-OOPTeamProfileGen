@@ -54,6 +54,11 @@ let htmlfileClose = `
 function generateHtml(staffArr) {
 
     staffArr.forEach(element => {
+        for (const key in element) {
+            if (element[key] == "") {
+                element[key] = "N/A"
+            }
+        }
         if (element instanceof Manager) {
             htmlfileOpen += `
             <div id="manager" class="row justify-content-center">

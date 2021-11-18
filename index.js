@@ -13,7 +13,6 @@ function managerInq() {
     inquirer.prompt(questionBank.managerQuestions)
         .then(
             (response) => {
-                console.log(response);
                 let newManager = new Manager(response.name, response.id, response.email, response.office)
                 staff.push(newManager)
                 menuInq();
