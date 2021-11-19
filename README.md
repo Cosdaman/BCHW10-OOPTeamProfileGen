@@ -21,8 +21,8 @@ Feel free to reach out, you can reach me through:
 - Email: Cosdaguy@gmail.com  
 
 ## Walkthrough Video  
-Raw file: https://github.com/Cosdaman/BCHW10-OOPTeamProfileGen/blob/main/OOPTeamProfileGen%20Walkthrough%20Video.webm
-Youtube: https://youtu.be/eHsHweLWdvw
+Raw file: https://github.com/Cosdaman/BCHW10-OOPTeamProfileGen/blob/main/OOPTeamProfileGen%20Walkthrough%20Video.webm  
+Youtube: https://youtu.be/eHsHweLWdvw  
 
 ## Screenshot/s  
 
