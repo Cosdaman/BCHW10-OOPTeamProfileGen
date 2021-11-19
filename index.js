@@ -36,7 +36,7 @@ function menuInq() {
                 } else if (response.teamAddMenu.includes('Intern')) {
                     internInq();
                 } else {
-                    console.log("finish")
+                    console.log("Creating file...")
                     createFile();
                 }
             })
@@ -90,7 +90,6 @@ function internInq() {
 }
 
 function createFile() {
-    console.log("file creation")
     htmlGen(staff)
 }
 
